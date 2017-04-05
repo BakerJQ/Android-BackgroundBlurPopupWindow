@@ -3,7 +3,7 @@ Android PopupWindow with dark & blur background
 
 Thanks to https://github.com/tvbarthel/BlurDialogFragment for blur engine
 
-##Screenshot
+## Screenshot
 ![](https://github.com/BakerJQ/BackgroundBlurPopupWindow/blob/master/Screenshots/show.gif)
 
 ## How to use
@@ -16,43 +16,52 @@ mPopupWindow.setFocusable(true);
 mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
 mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 ```
-#### Set dark layer
+#### Set dark and blur layer
 ```java
 case R.id.top:
-    mTextView.setText("This is a popupwindow\n\ndark on bottom");
-    mPopupWindow.setDarkStyle(-1);
+    mPopupWindow.setBlurRadius(BackgroundBlurPopupWindow.DEFAULT_BLUR_RADIUS);
+    mPopupWindow.setDownScaleFactor(BackgroundBlurPopupWindow
+            .DEFAULT_BLUR_DOWN_SCALE_FACTOR);
+    mTextView.setText("This is a popupwindow\n\nblur & dark on bottom");
     mPopupWindow.setDarkColor(Color.parseColor("#a0000000"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.darkBelow(mBtnTop);
     mPopupWindow.showAsDropDown(mBtnTop, mBtnTop.getRight() / 2, 0);
     break;
 case R.id.left:
-    mTextView.setText("This is a popupwindow\n\ndark on right");
-    mPopupWindow.setDarkStyle(-1);
+    mPopupWindow.setBlurRadius(BackgroundBlurPopupWindow.DEFAULT_BLUR_RADIUS);
+    mPopupWindow.setDownScaleFactor(BackgroundBlurPopupWindow
+            .DEFAULT_BLUR_DOWN_SCALE_FACTOR);
+    mTextView.setText("This is a popupwindow\n\nblur & dark on right");
     mPopupWindow.setDarkColor(Color.parseColor("#a0000000"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.darkRightOf(mBtnLeft);
     mPopupWindow.showAtLocation(mBtnLeft, Gravity.CENTER_VERTICAL | Gravity.LEFT, 0, 0);
     break;
 case R.id.right:
-    mTextView.setText("This is a popupwindow\n\ndark on left");
-    mPopupWindow.setDarkStyle(-1);
+    mPopupWindow.setBlurRadius(BackgroundBlurPopupWindow.DEFAULT_BLUR_RADIUS);
+    mPopupWindow.setDownScaleFactor(BackgroundBlurPopupWindow
+            .DEFAULT_BLUR_DOWN_SCALE_FACTOR);
+    mTextView.setText("This is a popupwindow\n\nblur & dark on left");
     mPopupWindow.setDarkColor(Color.parseColor("#a0000088"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.drakLeftOf(mBtnRight);
     mPopupWindow.showAtLocation(mBtnRight, Gravity.CENTER_VERTICAL | Gravity.RIGHT, 0, 0);
     break;
 case R.id.bottom:
-    mTextView.setText("This is a popupwindow\n\ndark on top");
-    mPopupWindow.setDarkStyle(-1);
+    mPopupWindow.setBlurRadius(BackgroundBlurPopupWindow.DEFAULT_BLUR_RADIUS);
+    mPopupWindow.setDownScaleFactor(BackgroundBlurPopupWindow
+            .DEFAULT_BLUR_DOWN_SCALE_FACTOR);
+    mTextView.setText("This is a popupwindow\n\nblur & dark on top");
     mPopupWindow.setDarkColor(Color.parseColor("#a0008800"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.darkAbove(mBtnBottom);
     mPopupWindow.showAtLocation(mBtnBottom, Gravity.CENTER_HORIZONTAL, 0, mBtnBottom.getTop());
     break;
 case R.id.center:
-    mTextView.setText("This is a popupwindow\n\ndark in center");
-    mPopupWindow.setDarkStyle(R.style.MyDarkStyle);
+    mPopupWindow.setBlurRadius(4);
+    mPopupWindow.setDownScaleFactor(1.5f);
+    mTextView.setText("This is a popupwindow\n\nblur & dark in center");
     mPopupWindow.setDarkColor(Color.parseColor("#a0880000"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.drakLeftOf(mBtnRight);
@@ -62,16 +71,19 @@ case R.id.center:
     mPopupWindow.showAtLocation(mBtnCenter, Gravity.CENTER, 0, 0);
     break;
 case R.id.all:
-    mTextView.setText("This is a popupwindow\n\ndark fill all");
-    mPopupWindow.setDarkStyle(-1);
+    mPopupWindow.setBlurRadius(10);
+    mPopupWindow.setDownScaleFactor(1.2f);
+    mTextView.setText("This is a popupwindow\n\nblur & dark fill all");
     mPopupWindow.setDarkColor(Color.parseColor("#a0000000"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.darkFillScreen();
     mPopupWindow.showAtLocation(mBtnAll, Gravity.CENTER, 0, 0);
     break;
 case R.id.view:
-    mTextView.setText("This is a popupwindow\n\ndark fill view");
-    mPopupWindow.setDarkStyle(-1);
+    mPopupWindow.setBlurRadius(BackgroundBlurPopupWindow.DEFAULT_BLUR_RADIUS);
+    mPopupWindow.setDownScaleFactor(BackgroundBlurPopupWindow
+            .DEFAULT_BLUR_DOWN_SCALE_FACTOR);
+    mTextView.setText("This is a popupwindow\n\nblur & dark fill view");
     mPopupWindow.setDarkColor(Color.parseColor("#a0000000"));
     mPopupWindow.resetDarkPosition();
     mPopupWindow.drakFillView(mBtnView);
