@@ -10,8 +10,8 @@ Thanks to https://github.com/tvbarthel/BlurDialogFragment for blur engine
 ### Init
 Just use it as the same as the original PopupWindow
 ```java
-mPopupWindow = new BackgroundDarkPopupWindow(mTextView, WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT);
+mPopupWindow = new BackgroundBlurPopupWindow(mTextView, WindowManager.LayoutParams.WRAP_CONTENT,
+        WindowManager.LayoutParams.WRAP_CONTENT, this, true);
 mPopupWindow.setFocusable(true);
 mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
 mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
